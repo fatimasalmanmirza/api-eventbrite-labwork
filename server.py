@@ -26,7 +26,11 @@ def show_afterparty_form():
 @app.route("/afterparties")
 def find_afterparties():
     """Search for afterparties on Eventbrite"""
+    
 
+    
+
+    
     query = request.args.get('query')
     location = request.args.get('location')
     distance = request.args.get('distance')
@@ -46,8 +50,12 @@ def find_afterparties():
         # - (Make sure to save the JSON data from the response to the data
         #   variable so that it can display on the page as well.)
 
+        r = requests.get("https://www.eventbriteapi.com/v3/events/search/?token=GMZ5A55ZIDZLZFWGJGL7")
+        data = r.json()
+
         data = {'This': ['Some', 'mock', 'JSON']}
         events = []
+    elif que    
 
         return render_template("afterparties.html",
                                data=pformat(data),
